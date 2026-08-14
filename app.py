@@ -2,6 +2,16 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+
+products = [
+    {"id": 1, "name": "Laptop", "price": 50000},
+    {"id": 2, "name": "Phone", "price": 20000}
+]
+
+@app.route("/api/products")
+def get_products():
+    return jsonify(products)
+    
 users = [
     {"id": 1, "name": "Nishant", "role": "Developer"},
     {"id": 2, "name": "Rahul", "role": "Tester"},
